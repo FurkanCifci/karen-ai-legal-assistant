@@ -648,27 +648,13 @@ def _build_pipeline_html(step_statuses: list[StepStatus]) -> str:
     badge_labels = {"pending": "Waiting", "active": "Running", "done": "Done"}
 
     for (icon, label), status in zip(_PIPELINE_STEPS, step_statuses):
-        rows.append(
-            f"""
-            <div class="pipeline-step step-{status}">
-                <span class="step-icon">{icon}</span>
-                <span class="step-label">{html.escape(label)}</span>
-                <span class="step-badge">{badge_labels[status]}</span>
-            </div>
-            """
-        )
+        rows.append(f"<div class='pipeline-step step-{status}'><span class='step-icon'>{icon}</span><span class='step-label'>{html.escape(label)}</span><span class='step-badge'>{badge_labels[status]}</span></div>")
 
-    return f"""
-    <div class="agent-pipeline karen-glass">
-        <p class="pipeline-title">Multi-Agent Pipeline</p>
-        {''.join(rows)}
-    </div>
-    """
+    return f"<div class='agent-pipeline karen-glass'><p class='pipeline-title'>Multi-Agent Pipeline</p>{''.join(rows)}</div>"
 
 
 def render_pipeline_stepper(step_statuses: list[StepStatus]) -> None:
     st.markdown(_build_pipeline_html(step_statuses), unsafe_allow_html=True)
-
 
 def render_sidebar() -> None:
     """Dark control-room sidebar with hardware status + single footer signature."""
