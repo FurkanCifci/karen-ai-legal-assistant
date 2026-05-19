@@ -1,0 +1,12 @@
+---
+pid: 30852
+cwd: /Users/furkan/.cursor/projects/empty-window
+last_command: echo ".venv/" >> .gitignoreecho "__pycache__/" >> .gitignore
+last_exit_code: 0
+---
+furkan@Furkans-MacBook-Pro ~ % cd /Users/furkan/.cursor/projects/empty-window
+furkan@Furkans-MacBook-Pro empty-window % git init
+Initialized empty Git repository in /Users/furkan/.cursor/projects/empty-window/.git/
+furkan@Furkans-MacBook-Pro empty-window % echo ".venv/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+furkan@Furkans-MacBook-Pro empty-window % 
