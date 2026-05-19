@@ -97,14 +97,13 @@ def render_results() -> None:
         render_idle_state()
         return
 
-    render_pipeline_stepper(["done", "done", "done"])
 
     policy = str(st.session_state.get(SESSION_RETRIEVED_POLICY, ""))
     email_body = str(st.session_state.get(SESSION_LAST_MOCK_EMAIL, ""))
     score = int(st.session_state.get(SESSION_JUDGE_SCORE, 0) or 0)
     verdict_text = str(st.session_state.get(SESSION_JUDGE_VERDICT, ""))
     new_tactic = str(st.session_state.get(SESSION_JUDGE_TACTIC, ""))
-
+    
     if policy:
         render_legal_foundation_card(policy)
 
